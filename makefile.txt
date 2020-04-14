@@ -1,0 +1,22 @@
+start: ./a.out
+main.o: main.cpp product.h shampoo.h store.h test.h toothbrush.h showergel.h eyeliner.h
+	g++ main.cpp -std=c++11 -c -o main.o
+test.o: test.h test.cpp
+	g++ test.cpp -std=c++11 -c -o test.o
+product.o: product.h product.cpp
+	g++ date.cpp -std=c++11 -c -o product.o
+store.o: store.h store.cpp
+	g++ store.cpp -std=c++11 -c -o store.o
+shampoo.o: shampoo.h shampoo.cpp
+	g++ shampoo.cpp -std=c++11 -c -o shampoo.o
+showergel.o: showergel.h showergel.h
+	g++ showergel.cpp -std=c++11 -c -o showergel.o
+eyeliner.o: eyeliner.h eyeliner.cpp
+	g++ eyeliner.cpp -std=c++11 -c -o eyeliner.o
+toothbrush.o: toothbrush.h toothbrush.cpp
+	g++ toothbrush.cpp -std=c++11 -c -o toothbrush.o
+a.out : main.o testy.o 
+	g++ main.o test.o date.o event.o schedule.o -std=c++11 -o a.out
+	./a.out
+clean:
+rm -f *.out *.o
